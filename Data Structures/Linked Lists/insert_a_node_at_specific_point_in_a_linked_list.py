@@ -7,17 +7,14 @@
  Node is defined as
  return back the head of the linked list in the below method. 
 """
-
-def print_list(head):
-    while head != None:
-        print head.data
-        head = head.next
- 
 class Node(object): 
     def __init__(self, data=None, next_node=None):
         self.data = data
         self.next = next_node
 
+# If list is empty, returns list with given data
+# If position to insert data is 0, insert at head of the list
+# Else, iterate through the values and insert data at given position
 def InsertNth(head, data, position):
     if not head:
         return Node(data)
@@ -29,7 +26,3 @@ def InsertNth(head, data, position):
             current = current.next
         current.next = Node(data, current.next)
         return head
-
-head = InsertNth(None, 22, 1)
-
-print_list(head)
