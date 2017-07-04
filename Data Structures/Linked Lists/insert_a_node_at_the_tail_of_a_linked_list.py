@@ -15,6 +15,9 @@ class Node(object):
         self.data = data
         self.next = next_node
 
+# Receives list head and data to be inserted
+# If list is null, creates a new list
+# Else, insert new value at the tail of the list 
 def Insert(head, data):
     if not head:
         return Node(data)
