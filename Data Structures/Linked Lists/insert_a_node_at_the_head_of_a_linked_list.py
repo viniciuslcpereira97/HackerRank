@@ -5,10 +5,6 @@
  
  return back the head of the linked list in the below method. 
 """
-def print_list(head):
-    while head != None:
-        print head.data
-        head = head.next
 
 class Node(object):
  
@@ -16,6 +12,8 @@ class Node(object):
         self.data = data
         self.next = next_node
 
+# If linked list is empty, creates a Node with given data
+# Else, swap values from current to next
 def Insert(head, data):
     if head == None:
         return Node(data)
@@ -24,8 +22,3 @@ def Insert(head, data):
         new_node.next = head
         head = new_node
     return head
-
-head = Node(1, Node(2))
-head = Insert(head, 3)
-
-print_list(head)
