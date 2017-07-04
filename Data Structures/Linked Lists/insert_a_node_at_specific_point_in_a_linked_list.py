@@ -19,6 +19,8 @@ class Node(object):
         self.next = next_node
 
 def InsertNth(head, data, position):
+    if not head:
+        return Node(data)
     if position == 0:
         return Node(data, head)
     else:
@@ -28,8 +30,6 @@ def InsertNth(head, data, position):
         current.next = Node(data, current.next)
         return head
 
-head = Node(55, Node(66, Node(77, Node(88, Node(99)))))
-
-head = InsertNth(head, 111, 3)
+head = InsertNth(None, 22, 1)
 
 print_list(head)
