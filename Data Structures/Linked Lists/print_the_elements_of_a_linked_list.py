@@ -7,6 +7,7 @@
  Node is defined as
 """
 
+# For each value at linked list print data and update head to next value
 def print_list(head):
     while head != None:
         print head.data
