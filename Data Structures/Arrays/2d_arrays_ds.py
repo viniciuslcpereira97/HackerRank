@@ -3,12 +3,16 @@
 import sys
 
 arr = []
+# Get all user input
 for arr_i in xrange(6):
     arr_temp = map(int,raw_input().strip().split(' '))
     arr.append(arr_temp)
 
+# Initializes sums variable
 sums = list()
 
+# Sum all hourglasses and insert in a list
+# O(n²)
 for x, row in enumerate(arr[:-2]):
     for y, item in enumerate(row[:-2]):
         f_row = item + row[y + 1] + row[y + 2]
