@@ -1,3 +1,3 @@
-# HackerRank Pratice
+# HackerRank Practice
 
 HackerRank solved exercises
