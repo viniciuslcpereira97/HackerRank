@@ -7,11 +7,6 @@
  
  return back the head of the linked list in the below method. 
 """
-def print_list(head):
-    while head != None:
-        print head.data
-        head = head.next
-
 class Node(object):
  
     def __init__(self, data=None, next_node=None):
@@ -22,17 +17,13 @@ def Delete(head, position):
     if position == 0:
         return head.next
     else:
-        prevNode = head
-        for _ in range(position - 1):
-            prevNode = head.next
-
-        delete_node = prevNode.next
-        posNode = delete_node.next
-        prevNode.next = posNode
+        temp = head
+        count = 0
+        while count < position - 1:
+            temp = temp.next
+            count = count + 1
+        
+        delnode = temp.next
+        temp.next = temp.next.next
+        delnode.next = None
         return head
-
-head = Node(1, Node(2, Node(3, Node(4, Node(5)))))
-
-head = Delete(head, 4)
-
-print_list(head)
