@@ -13,7 +13,6 @@ class Node(object):
         self.data = data
         self.next = next_node
 
-
 def CountNodes(head):
     counter = 0
     while head is not None:
@@ -23,13 +22,8 @@ def CountNodes(head):
 
 def GetNode(head, position, curr=None):
     curr = ( CountNodes(head) - 1 )
-    print "curr: {} --> position: {} --> value: {}".format(curr, position, head.data)
     if curr == position:
         return head.data
     else:
         if head.next is not None:
             return GetNode(head.next, position, (curr - 1))
-
-
-head = Node(1, Node(2, Node(3, Node(4))))
-print GetNode(head, 4)
