@@ -2,8 +2,8 @@
 #-*- coding: utf-8 -*-
 
 moves = {
-    "Y" : {"NEG": "UP", "POS": "DOWN"},
-    "X" : {"NEG": "LEFT", "POS": "RIGHT"} 
+    "X" : {"POS": "UP", "NEG": "DOWN"},
+    "Y" : {"POS": "LEFT", "NEG": "RIGHT"} 
 }
 
 def drawGrid():
@@ -45,8 +45,7 @@ def getCommand(n1, n2, axis):
 def displayPathtoPrincess(positions):
     x1, y1 = positions[0]
     x2, y2 = positions[1]
-    x_commands = getCommand(x1, x2, "X")
-    y_commands = getCommand(y1, y2, "Y")
+    x_commands, y_commands  = getCommand(x1, x2, "X"),  getCommand(y1, y2, "Y") 
     all_commands = x_commands + y_commands
     print "\n".join(all_commands)
 
